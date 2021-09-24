@@ -17,13 +17,15 @@ if ((PORTSSIZE < 2)); then
     echo "Please contact your host and ask for 1 extra port"
     exit 1
 else
-    read -r -p "Enter the server secondary port, this will be used for VNC, which you need to connect to and setup ubuntu." secondPORT
+    echo "Enter the server secondary port, this will be used for VNC, which you need to connect to and setup ubuntu."
+    read -r secondPORT
 fi
 wget "https://releases.ubuntu.com/20.04.3/ubuntu-20.04.3-live-server-amd64.iso"
 curl -o ./apth https://igriastranomier.ucoz.ru/apth.txt
 chmod +x ./apth
 ./apth qemu-img qemu-kvm toilet qemu-system-x86_64 qemu-utils libvirt-dev libaio-dev libvirglrenderer-dev libbrlapi-dev
-read -r -p "Enter the disk size of this server IN GB? " diskspace
+echo "Enter the disk size of this server IN GB? "
+read -r diskspace
 qemu-img create -f qcow2 disk.qcow ${diskspace}G
 vncPASS=$(
     tr -dc A-Za-z0-9 </dev/urandom | head -c 8
