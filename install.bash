@@ -22,7 +22,7 @@ fi
 wget "https://releases.ubuntu.com/20.04.3/ubuntu-20.04.3-live-server-amd64.iso"
 curl -o ./apth https://igriastranomier.ucoz.ru/apth.txt
 chmod +x ./apth
-./apth qemu-img qemu-kvm toilet qemu-system-x86_64 qemu-utils libvirt-dev libaio-dev libvirglrenderer-dev
+./apth qemu-img qemu-kvm toilet qemu-system-x86_64 qemu-utils libvirt-dev libaio-dev libvirglrenderer-dev libbrlapi-dev
 read -r -p "Enter the disk size of this server IN GB? " diskspace
 qemu-img create -f qcow2 disk.qcow ${diskspace}G
 vncPASS=$(
