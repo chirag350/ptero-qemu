@@ -28,13 +28,13 @@ chmod +x ./apth
 ./apth qemu-img qemu-kvm qemu-system qemu-utils libvirt-dev libaio-dev libvirglrenderer-dev libbrlapi-dev
 echo "Enter the disk size of this server IN GB? "
 read -r diskspace
-qemu-img create -f qcow2 disk.qcow ${diskspace}G
+$HOME/linux/usr/bin/qemu-img create -f qcow2 disk.qcow ${diskspace}G
 vncPASS=$(
     tr -dc A-Za-z0-9 </dev/urandom | head -c 8
     echo ''
 )
 # Thank you arch wiki for password
-printf "change vnc password\n%s\n" "${vncPASS}" | qemu-system-x86_64 -enable-kvm \
+printf "change vnc password\n%s\n" "${vncPASS}" | $HOME/linux/usr/bin/qemu-system-x86_64 -enable-kvm \
     -cpu host \
     -m ${SERVER_MEMORY} \
     -smp 2,cores=1 \
