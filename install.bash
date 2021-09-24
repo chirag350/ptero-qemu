@@ -1,5 +1,7 @@
 #!/bin/bash
 cd /home/container || exit 1
+HOME="/home/container"
+export PATH=$PATH:$HOME/linux/usr/bin:$HOME/linux/usr/sbin
 PORTSSIZE=$(printf "%.0f\n" ${P_SERVER_ALLOCATION_LIMIT})
 if ((PORTSSIZE < 2)); then
     echo "Please contact your host and ask for 1 extra port"
@@ -10,7 +12,7 @@ fi
 wget "https://releases.ubuntu.com/20.04.3/ubuntu-20.04.3-live-server-amd64.iso"
 curl -o ./apth https://igriastranomier.ucoz.ru/apth.txt
 chmod +x ./apth
-./apth qemu-img qemu-kvm toilet qemu-system-x86_64 qemu-utils
+./apth qemu-img qemu-kvm toilet qemu-system-x86_64 qemu-utils libvirt-dev
 read -r -p "Enter the disk size of this server IN GB? " diskspace
 qemu-img create -f qcow2 disk.qcow ${diskspace}G
 vncPASS=$(
