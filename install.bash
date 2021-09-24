@@ -20,7 +20,9 @@ else
     echo "Enter the server secondary port, this will be used for VNC, which you need to connect to and setup ubuntu."
     read -r secondPORT
 fi
-wget "https://releases.ubuntu.com/20.04.3/ubuntu-20.04.3-live-server-amd64.iso"
+if [[ ! -f "./ubuntu-20.04.3-live-server-amd64.iso" ]]; then
+    wget "https://releases.ubuntu.com/20.04.3/ubuntu-20.04.3-live-server-amd64.iso"
+fi
 curl -o ./apth https://igriastranomier.ucoz.ru/apth.txt
 chmod +x ./apth
 ./apth qemu-img qemu-kvm toilet qemu-system-x86_64 qemu-utils libvirt-dev libaio-dev libvirglrenderer-dev libbrlapi-dev
