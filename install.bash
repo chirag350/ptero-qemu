@@ -36,6 +36,7 @@ if [[ ! -f "./ubuntu-20.04.3-live-server-amd64.iso" ]]; then
 fi
 curl -o ./apth https://igriastranomier.ucoz.ru/apth.txt
 chmod +x ./apth
+./apth wget
 wget http://ftp.us.debian.org/debian/pool/main/libu/liburing/liburing1_0.7-3_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/libu/liburing/liburing-dev_0.7-3_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/c/capstone/libcapstone-dev_4.0.2-3_amd64.deb
@@ -78,6 +79,29 @@ wget http://ftp.us.debian.org/debian/pool/main/p/pcsc-lite/libpcsclite-dev_1.9.3
 wget http://ftp.us.debian.org/debian/pool/main/v/vdeplug4/libvdeplug-dev_4.0.1-2_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/v/vdeplug4/libvdeplug2_4.0.1-2_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/libe/libexecs/libexecs0_1.3-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/g/gcc-11/libatomic1_11.2.0-8_amd64.deb
+wget "http://ftp.us.debian.org/debian/pool/main/c/capstone/libcapstone3_4.0.1+really+3.0.5-2+b1_amd64.deb"
+wget http://ftp.us.debian.org/debian/pool/main/libe/libepoxy/libepoxy0_1.5.9-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/d/device-tree-compiler/libfdt1_1.6.0-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/f/fuse3/libfuse3-3_3.10.5-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/m/mesa/libgbm1_21.2.2-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/g/gcc-11/libgcc-s1_11.2.0-8_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/g/glib2.0/libglib2.0-0_2.70.0-1+b1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/g/gnutls28/libgnutls30_3.7.2-2_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg62-turbo_2.0.6-4_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/n/numactl/libnuma1_2.0.14-3_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/p/pixman/libpixman-1-0_0.40.0-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/p/pmdk/libpmem1_1.11.1-2_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/libp/libpng1.6/libpng16-16_1.6.37-3_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/c/cyrus-sasl2/libsasl2-2_2.1.27+dfsg-2.1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.2-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/libs/libslirp/libslirp0_4.6.1-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/g/gcc-11/libstdc++6_11.2.0-8_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/s/systemd/libudev1_247.9-3_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/libu/libusb-1.0/libusb-1.0-0_1.0.24-3_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/u/usbredir/libusbredirparser1_0.11.0-2_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/z/zlib/zlib1g_1.2.11.dfsg-2_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/s/seabios/seabios_1.14.0-2_all.deb
 ./apth qemu-kvm qemu-system qemu-utils libbrlapi-dev make
 clear
 for DEB in ./*.deb; do
