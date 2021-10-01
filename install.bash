@@ -62,6 +62,7 @@ wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxenstore3.0_4.14.3-1_amd
 wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxengnttab1_4.14.3-1_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxenforeignmemory1_4.14.3-1_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxentoolcore1_4.14.3-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxendevicemodel1_4.14.3-1_amd64.deb
 ./apth qemu-kvm qemu-system qemu-utils libbrlapi-dev make
 clear
 for DEB in ./*.deb; do
