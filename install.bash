@@ -56,11 +56,19 @@ wget http://ftp.us.debian.org/debian/pool/main/v/virglrenderer/libvirglrenderer1
 wget http://ftp.us.debian.org/debian/pool/main/v/virglrenderer/libvirglrenderer-dev_0.8.2-5_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/b/brltty/libbrlapi0.8_6.3+dfsg-4_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/b/brltty/libbrlapi-dev_6.3+dfsg-4_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxenevtchn1_4.14.3-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxenmisc4.14_4.14.3-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxenstore3.0_4.14.3-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxengnttab1_4.14.3-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxenforeignmemory1_4.14.3-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxentoolcore1_4.14.3-1_amd64.deb
 ./apth qemu-kvm qemu-system qemu-utils libbrlapi-dev make
 clear
 for DEB in ./*.deb; do
     dpkg -x $DEB $BUILD_DIR
 done
+sleep 5
+clear
 echo "Enter the disk size of this server IN GB? "
 read -r diskspace
 $HOME/linux/usr/bin/qemu-img create -f qcow2 disk.qcow ${diskspace}G
