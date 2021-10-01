@@ -40,12 +40,27 @@ wget http://ftp.us.debian.org/debian/pool/main/libu/liburing/liburing1_0.7-3_amd
 wget http://ftp.us.debian.org/debian/pool/main/libu/liburing/liburing-dev_0.7-3_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/c/capstone/libcapstone-dev_4.0.2-3_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/c/capstone/libcapstone4_4.0.2-3_amd64.deb
-./apth qemu-kvm qemu-system qemu-utils libvirt-dev libaio-dev libvirglrenderer-dev libbrlapi-dev make libspice-server-dev nettle-dev
+wget http://ftp.us.debian.org/debian/pool/main/n/nettle/libnettle8_3.7.3-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/n/nettle/nettle-dev_3.7.3-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/n/nettle/libhogweed6_3.7.3-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/g/gmp/libgmp-dev_6.2.1+dfsg-2_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/s/spice-protocol/libspice-protocol-dev_0.14.3-1_all.deb
+wget http://ftp.us.debian.org/debian/pool/main/s/spice/libspice-server1_0.14.3-2.1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/s/spice/libspice-server-dev_0.14.3-2.1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/libv/libvirt/libvirt-dev_7.6.0-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/libv/libvirt/libvirt0_7.6.0-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxen-dev_4.14.3-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/liba/libaio/libaio1_0.3.112-9_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/liba/libaio/libaio-dev_0.3.112-9_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/v/virglrenderer/libvirglrenderer1_0.8.2-5_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/v/virglrenderer/libvirglrenderer-dev_0.8.2-5_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/b/brltty/libbrlapi0.8_6.3+dfsg-4_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/b/brltty/libbrlapi-dev_6.3+dfsg-4_amd64.deb
+./apth qemu-kvm qemu-system qemu-utils libbrlapi-dev make
 clear
-dpkg -x ./liburing1_0.7-3_amd64.deb $BUILD_DIR
-dpkg -x ./liburing-dev_0.7-3_amd64.deb $BUILD_DIR
-dpkg -x ./libcapstone4_4.0.2-3_amd64.deb $BUILD_DIR
-dpkg -x ./libcapstone-dev_4.0.2-3_amd64.deb $BUILD_DIR
+for DEB in ./*.deb; do
+    dpkg -x $DEB $BUILD_DIR
+done
 echo "Enter the disk size of this server IN GB? "
 read -r diskspace
 $HOME/linux/usr/bin/qemu-img create -f qcow2 disk.qcow ${diskspace}G
@@ -71,3 +86,4 @@ echo "User: root"
 echo "Password: ${vncPASS}"
 touch "is-installed"
 fi
+rm *.deb
