@@ -40,7 +40,7 @@ wget http://ftp.us.debian.org/debian/pool/main/libu/liburing/liburing1_0.7-3_amd
 wget http://ftp.us.debian.org/debian/pool/main/libu/liburing/liburing-dev_0.7-3_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/c/capstone/libcapstone-dev_4.0.2-3_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/c/capstone/libcapstone4_4.0.2-3_amd64.deb
-./apth qemu-kvm qemu-system qemu-utils libvirt-dev libaio-dev libvirglrenderer-dev libbrlapi-dev make
+./apth qemu-kvm qemu-system qemu-utils libvirt-dev libaio-dev libvirglrenderer-dev libbrlapi-dev make libspice-server-dev nettle-dev
 clear
 dpkg -x ./liburing1_0.7-3_amd64.deb $BUILD_DIR
 dpkg -x ./liburing-dev_0.7-3_amd64.deb $BUILD_DIR
