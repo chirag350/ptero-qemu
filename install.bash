@@ -102,6 +102,7 @@ wget http://ftp.us.debian.org/debian/pool/main/libu/libusb-1.0/libusb-1.0-0_1.0.
 wget http://ftp.us.debian.org/debian/pool/main/u/usbredir/libusbredirparser1_0.11.0-2_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/z/zlib/zlib1g_1.2.11.dfsg-2_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/s/seabios/seabios_1.14.0-2_all.deb
+wget "http://security.debian.org/debian-security/pool/updates/main/x/xen/libxentoollog1_4.11.4+107-gef32c7afa2-1_amd64.deb"
 ./apth qemu-kvm qemu-system qemu-utils libbrlapi-dev make
 clear
 for DEB in ./*.deb; do
