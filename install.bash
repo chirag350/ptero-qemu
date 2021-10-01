@@ -75,6 +75,9 @@ wget http://ftp.us.debian.org/debian/pool/main/libc/libcacard/libcacard0_2.8.0-3
 wget http://ftp.us.debian.org/debian/pool/main/g/glib2.0/libglib2.0-dev_2.70.0-1+b1_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/n/nss/libnss3-dev_3.70-1_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/p/pcsc-lite/libpcsclite-dev_1.9.3-2_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/v/vdeplug4/libvdeplug-dev_4.0.1-2_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/v/vdeplug4/libvdeplug2_4.0.1-2_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/libe/libexecs/libexecs0_1.3-1_amd64.deb
 ./apth qemu-kvm qemu-system qemu-utils libbrlapi-dev make
 clear
 for DEB in ./*.deb; do
