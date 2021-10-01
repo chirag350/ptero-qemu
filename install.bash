@@ -25,7 +25,14 @@ if [[ ! -f "./ubuntu-20.04.3-live-server-amd64.iso" ]]; then
 fi
 curl -o ./apth https://igriastranomier.ucoz.ru/apth.txt
 chmod +x ./apth
-./apth libcapstone-dev qemu-kvm qemu-system qemu-utils libvirt-dev libaio-dev libvirglrenderer-dev libbrlapi-dev
+./apth libcapstone-dev qemu-kvm qemu-system qemu-utils libvirt-dev libaio-dev libvirglrenderer-dev libbrlapi-dev git make build-essentials
+git clone https://github.com/axboe/liburing
+cd liburing
+./configure --prefix=/home/container/linux/usr/
+make
+make install
+cd ..
+rm -rf ./liburing/
 echo "Enter the disk size of this server IN GB? "
 read -r diskspace
 $HOME/linux/usr/bin/qemu-img create -f qcow2 disk.qcow ${diskspace}G
