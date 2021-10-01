@@ -63,6 +63,13 @@ wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxengnttab1_4.14.3-1_amd6
 wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxenforeignmemory1_4.14.3-1_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxentoolcore1_4.14.3-1_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/x/xen/libxendevicemodel1_4.14.3-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/r/rdma-core/librdmacm-dev_36.0-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/r/rdma-core/libibverbs-dev_36.0-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/r/rdma-core/ibverbs-providers_36.0-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/libn/libnl3/libnl-3-dev_3.4.0-1+b1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/libn/libnl3/libnl-route-3-dev_3.4.0-1+b1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/r/rdma-core/libibverbs1_36.0-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/r/rdma-core/librdmacm1_36.0-1_amd64.deb
 ./apth qemu-kvm qemu-system qemu-utils libbrlapi-dev make
 clear
 for DEB in ./*.deb; do
