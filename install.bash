@@ -86,8 +86,6 @@ wget http://ftp.us.debian.org/debian/pool/main/d/device-tree-compiler/libfdt1_1.
 wget http://ftp.us.debian.org/debian/pool/main/f/fuse3/libfuse3-3_3.10.5-1_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/m/mesa/libgbm1_21.2.2-1_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/g/gcc-11/libgcc-s1_11.2.0-8_amd64.deb
-wget http://ftp.us.debian.org/debian/pool/main/g/glib2.0/libglib2.0-0_2.70.0-1+b1_amd64.deb
-wget http://ftp.us.debian.org/debian/pool/main/g/gnutls28/libgnutls30_3.7.2-2_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg62-turbo_2.0.6-4_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/n/numactl/libnuma1_2.0.14-3_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/p/pixman/libpixman-1-0_0.40.0-1_amd64.deb
