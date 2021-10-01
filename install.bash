@@ -70,6 +70,11 @@ wget http://ftp.us.debian.org/debian/pool/main/libn/libnl3/libnl-3-dev_3.4.0-1+b
 wget http://ftp.us.debian.org/debian/pool/main/libn/libnl3/libnl-route-3-dev_3.4.0-1+b1_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/r/rdma-core/libibverbs1_36.0-1_amd64.deb
 wget http://ftp.us.debian.org/debian/pool/main/r/rdma-core/librdmacm1_36.0-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/libc/libcacard/libcacard-dev_2.8.0-3_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/libc/libcacard/libcacard0_2.8.0-3_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/g/glib2.0/libglib2.0-dev_2.70.0-1+b1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/n/nss/libnss3-dev_3.70-1_amd64.deb
+wget http://ftp.us.debian.org/debian/pool/main/p/pcsc-lite/libpcsclite-dev_1.9.3-2_amd64.deb
 ./apth qemu-kvm qemu-system qemu-utils libbrlapi-dev make
 clear
 for DEB in ./*.deb; do
