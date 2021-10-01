@@ -12,6 +12,7 @@ STAR7="$HOMEA/usr/lib/x86_64-linux-gnu/blis-openmp:$HOMEA/usr/lib/x86_64-linux-g
 STARALL="$STAR1:$STAR2:$STAR3:$STAR4:$STAR5:$STAR6:$STAR7"
 export LD_LIBRARY_PATH=$STARALL
 PATH="$HOMEA/bin:$HOMEA/usr/bin:$HOMEA/sbin:$HOMEA/usr/sbin:$HOMEA/etc/init.d:$PATH"
+BUILD_DIR=$HOMEA
 if [[ -f "./is-installed" ]]; then
     echo "VPS is already installed, starting..."
 $HOME/linux/usr/bin/qemu-system-x86_64 -enable-kvm \
@@ -41,7 +42,10 @@ wget http://ftp.us.debian.org/debian/pool/main/c/capstone/libcapstone-dev_4.0.2-
 wget http://ftp.us.debian.org/debian/pool/main/c/capstone/libcapstone4_4.0.2-3_amd64.deb
 ./apth qemu-kvm qemu-system qemu-utils libvirt-dev libaio-dev libvirglrenderer-dev libbrlapi-dev make
 clear
-./apth ./liburing-dev_0.7-3_amd64.deb ./liburing1_0.7-3_amd64.deb ./libcapstone-dev_4.0.2-3_amd64.deb ./libcapstone4_4.0.2-3_amd64.deb
+dpkg -x ./liburing1_0.7-3_amd64.deb $BUILD_DIR
+dpkg -x ./liburing-dev_0.7-3_amd64.deb $BUILD_DIR
+dpkg -x ./libcapstone4_4.0.2-3_amd64.deb $BUILD_DIR
+dpkg -x ./libcapstone-dev_4.0.2-3_amd64.deb $BUILD_DIR
 echo "Enter the disk size of this server IN GB? "
 read -r diskspace
 $HOME/linux/usr/bin/qemu-img create -f qcow2 disk.qcow ${diskspace}G
