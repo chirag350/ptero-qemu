@@ -12,6 +12,16 @@ STAR7="$HOMEA/usr/lib/x86_64-linux-gnu/blis-openmp:$HOMEA/usr/lib/x86_64-linux-g
 STARALL="$STAR1:$STAR2:$STAR3:$STAR4:$STAR5:$STAR6:$STAR7"
 export LD_LIBRARY_PATH=$STARALL
 PATH="$HOMEA/bin:$HOMEA/usr/bin:$HOMEA/sbin:$HOMEA/usr/sbin:$HOMEA/etc/init.d:$PATH"
+if [[ -f "./is-installed" ]]; then
+    echo "VPS is already installed, starting..."
+$HOME/linux/usr/bin/qemu-system-x86_64 -enable-kvm \
+    -cpu host \
+    -m ${SERVER_MEMORY} \
+    -smp 2,cores=1 \
+    -machine q35,accel=kvm \
+    -hda /home/container/disk.qcow \
+    -net user,hostfwd=tcp::${SERVER_PORT}-:${SERVER_PORT}
+else
 PORTSSIZE=$(printf "%.0f\n" ${P_SERVER_ALLOCATION_LIMIT})
 if ((PORTSSIZE < 2)); then
     echo "Please contact your host and ask for 1 extra port"
@@ -56,3 +66,4 @@ echo "IP: ${SERVER_IP}"
 echo "Port: ${secondPORT}"
 echo "User: root"
 echo "Password: ${vncPASS}"
+fi
