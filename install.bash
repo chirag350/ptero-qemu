@@ -66,4 +66,5 @@ echo "IP: ${SERVER_IP}"
 echo "Port: ${secondPORT}"
 echo "User: root"
 echo "Password: ${vncPASS}"
+touch "is-installed"
 fi
