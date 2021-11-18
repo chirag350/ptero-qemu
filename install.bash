@@ -29,8 +29,9 @@ if ((PORTSSIZE < 2)); then
     exit 1
 else
     echo "Enter the server secondary port, this will be used for VNC, which you need to connect to and setup ubuntu."
-    read -r secondPORT
+    read secondPORT
 fi
+echo "Downloading Ubuntu"
 if [[ ! -f "./ubuntu-20.04.3-live-server-amd64.iso" ]]; then
     wget "https://releases.ubuntu.com/20.04.3/ubuntu-20.04.3-live-server-amd64.iso"
 fi
@@ -111,14 +112,14 @@ done
 sleep 5
 clear
 echo "Enter the disk size of this server IN GB? "
-read -r diskspace
-$HOME/linux/usr/bin/qemu-img create -f qcow2 disk.qcow ${diskspace}G
+read diskspace
+qemu-img create -f qcow2 disk.qcow ${diskspace}G
 vncPASS=$(
     tr -dc A-Za-z0-9 </dev/urandom | head -c 8
     echo ''
 )
 # Thank you arch wiki for password
-printf "change vnc password\n%s\n" "${vncPASS}" | $HOME/linux/usr/bin/qemu-system-x86_64 -enable-kvm \
+printf "change vnc password\n%s\n" "${vncPASS}" | qemu-system-x86_64 -enable-kvm \
     -cpu host \
     -m ${SERVER_MEMORY} \
     -smp 2,cores=1 \
